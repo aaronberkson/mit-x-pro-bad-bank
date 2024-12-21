@@ -1,0 +1,260 @@
+/* Define the border thickness and circle diameter within the navbar context */
+.navbar {
+  --border-thickness: 5px; /* Thickness for selection circle */
+  --circle-diameter: 197px; /* Diameter for selection circle */
+  --hover-border-thickness: 4px; /* Thickness for hover circle */
+  --hover-circle-diameter: 183px; /* Diameter for hover circle */
+  --hover-circle-color: var(--link-nav-hover); /* Blue color for hover state */
+  --active-circle-color: #B2FFFF; /* Bright cyan color for active state */
+  height: 198px; /* Set your desired height here */ 
+  padding-top: 7px; /* Adjust the top padding */ 
+  margin-top: 0px; /* Adjust the top margin */
+}
+
+
+/* Your existing navbar-brand styles */
+.navbar-brand {
+  position: relative;
+  height: var(--hover-circle-diameter); /* Use hover variable for height */
+  width: var(--hover-circle-diameter);  /* Use hover variable for width */
+  display: flex; /* Enables the use of flexbox properties */
+  align-items: center; /* Centers the content vertically */
+  justify-content: center; /* Centers the content horizontally */
+  border-radius: 50%; /* Make it circular */
+  transition: border 0.3s ease-in-out, background-color 0.3s; /* Smooth transition for border and background-color changes */
+  border: var(--hover-border-thickness) solid transparent; /* Initial border set to transparent */
+
+}
+
+.navbar-brand-wrapper {
+  margin-left: 7px; /* Nudge the navbar-brand to the right */
+}
+
+/* Keyframes for painting on the border */
+@keyframes border-paint-on {
+  0% {
+    stroke-dashoffset: 628; /* Start with the border hidden */
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;   /* End with the border fully visible */
+  }
+}
+
+/* Keyframes for painting off the border */
+@keyframes border-paint-off {
+  0% {
+    stroke-dashoffset: 0;   /* Start with the border fully visible */
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 628; /* End with the border hidden */
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+
+
+
+
+.navbar-brand:hover,
+.navbar-brand:focus,
+.navbar-brand:active {
+  border-color: var(--hover-circle-color); /* Blue hover border */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.navbar-brand:focus,
+.navbar-brand:active {
+  border-color: var(--active-circle-color); /* Bright cyan on click, focus, and tap */
+}
+
+
+.navbar-brand svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the circle */
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+}
+
+.circle {
+  fill: none;
+  stroke: var(--active-nav-color); /* Orange for selection */
+  stroke-width: var(--border-thickness); /* Adjusted thickness */
+  stroke-dasharray: 630; /* This value should be equal to the circumference of the circle */
+  stroke-dashoffset: 630; /* Start the animation with the border completely hidden */
+  transition: stroke-dashoffset 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth transition for the animation */
+  visibility: hidden; /* Ensure the circle is initially hidden */
+  opacity: 0; /* Ensure the circle is initially invisible */
+}
+
+.active-nav-brand .circle {
+  stroke-dashoffset: 0; /* Complete the circle when the nav brand is active */
+  animation: border-paint-on 0.5s forwards; /* Trigger the border paint-on animation */
+  visibility: visible; /* Ensure visibility when active */
+  opacity: 1; /* Ensure opacity when active */
+}
+
+.deselect-nav-brand .circle {
+  stroke-dashoffset: 630; /* Hide the circle when the nav brand is deselected */
+  animation: border-paint-off 0.5s forwards; /* Trigger the border paint-off animation */
+  visibility: hidden; /* Ensure the circle is hidden after the animation */
+  opacity: 0; /* Ensure the circle is invisible after the animation */
+}
+
+/* Custom navbar styling */
+.navbar-brand, .nav-link {
+  font-size: 1.5rem !important; 
+}
+
+.custom-link-color {
+  color: var(--link-nav-color); 
+}
+
+.custom-link-color:hover,
+.custom-link-color:focus {
+  color: var(--link-nav-hover); 
+}
+
+/* Add a right border to each nav-link */
+.navbar-nav .nav-link {
+  border-right: 2px solid  var(--nav-pipe-color);
+  padding: 17px;
+  height: 40px; /* Custom height of pipe-like separator */
+  display: flex;
+  align-items: center; /* This will vertically center the text */
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  border-color: var(--link-nav-hover); /* Blue hover border */
+  color: var(--link-nav-hover); /* Change text color on hover and focus */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Increase specificity for the last nav-link */
+.navbar-nav > li:not(:last-child) > .nav-link {
+  border-right: 2px solid var(--nav-pipe-color);
+  padding: 17px;
+}
+/* Remove the border for the last nav-link */
+.navbar-nav > li:last-child > .nav-link {
+  border-right: none;
+  padding: 17px; 
+}
+
+/* Handle the on click or mouse down state */
+.nav-link:active,
+.nav-link:focus:active {
+  color: var(--active-circle-color); /* Ensure this is the bright cyan color */
+}
+
+/* Remove underline from active nav items */
+.nav-link.active-nav-item {
+  border-bottom: none; /* Remove the old underline */
+  cursor: default; /* Maintain default cursor */
+  color: var(--link-nav-color); /* Maintain link nav color */
+  pointer-events: none; /* Disable interactions */
+}
+
+/* Remove the old underline from active nav item pseudo-element */
+.active-nav-item::after {
+  content: none; /* Remove the old underline */
+}
+
+/* Remove hover state for active nav item */
+.active-nav-item:hover {
+  color: var(--link-nav-color); /* Maintain link nav color on hover */
+}
+
+/* Highlight underline for nav items */
+.nav-underline {
+  position: absolute;
+  bottom: -6px;
+  height: 4px;
+  background-color: var(--active-nav-color);
+  transition: left 0.3s ease-in-out, width 0.3s ease-in-out; /* Smooth transition for movement */
+}
+
+.navbar-nav {
+  position: relative; /* Ensure the underline is positioned correctly */
+}
+
+/* Tooltip styling */
+.custom-tooltip {
+  font-size: 20px;
+  animation: fadeOut 0.5s ease-in-out; /* Default fade-out duration and style */
+  transition: opacity 0.5s ease-in-out; /* Ensure smooth fade-out transition */
+}
+
+.custom-tooltip.show {
+  animation: fadeIn 0.5s ease-in-out; /* Default fade-in duration and style */
+  transition: opacity 0.5s ease-in-out; /* Ensure smooth fade-in transition */
+}
+
+.custom-tooltip .tooltip-inner {
+  max-width: 1000px; /* for widening tooltips */
+  background-color: var(--tooltip-color); /* Tooltip color from global styles */
+}
+
+/* Create Account Tooltip Arrow */
+.custom-tooltip.create-account .tooltip-inner::before {
+  content: '';
+  position: absolute;
+  bottom: 100%; /* Position the arrow above the tooltip */
+  left: 21%; /* Initial position */
+  margin-bottom: -15px; /* Adjust the size of the arrow */
+  border-width: 15px; /* Make the arrow larger */
+  border-style: solid;
+  border-color: transparent transparent var(--tooltip-color) transparent; /* The third value is the arrow color */
+}
+
+/* Deposit Tooltip Arrow */
+.custom-tooltip.deposit .tooltip-inner::before {
+  content: '';
+  position: absolute;
+  bottom: 100%; /* Position the arrow above the tooltip */
+  left: 47%; /* Initial position */
+  margin-bottom: -15px; /* Adjust the size of the arrow */
+  border-width: 15px; /* Make the arrow larger */
+  border-style: solid;
+  border-color: transparent transparent var(--tooltip-color) transparent; /* The third value is the arrow color */
+}
+
+/* Withdraw Tooltip Arrow */
+.custom-tooltip.withdraw .tooltip-inner::before {
+  content: '';
+  position: absolute;
+  bottom: 100%; /* Position the arrow above the tooltip */
+  left: 44%; /* Initial position */
+  margin-bottom: -15px; /* Adjust the size of the arrow */
+  border-width: 15px; /* Make the arrow larger */
+  border-style: solid;
+  border-color: transparent transparent var(--tooltip-color) transparent; /* The third value is the arrow color */
+}
+
+/* All Data Tooltip Arrow */
+.custom-tooltip.all-data .tooltip-inner::before {
+  content: '';
+  position: absolute;
+  bottom: 100%; /* Position the arrow above the tooltip */
+  left: 85%; /* Initial position */
+  margin-bottom: -15px; /* Adjust the size of the arrow */
+  border-width: 15px; /* Make the arrow larger */
+  border-style: solid;
+  border-color: transparent transparent var(--tooltip-color) transparent; /* The third value is the arrow color */
+}
+
+.navbar-brand.active-nav-brand {
+  cursor: default; /* Disable cursor change */
+  pointer-events: none; /* Disable hover interactions */
+}
+
+.logout-button {
+  margin-right: 19px; /* Adjust the value as needed to nudge the button to the left */
+}

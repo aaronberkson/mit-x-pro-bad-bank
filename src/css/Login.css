@@ -1,0 +1,232 @@
+/* General Styles for Login components */
+body.login-page {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ensure centering and visibility */
+.login-container-custom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure it takes full viewport height */
+  width: 100vw;  /* Ensure it takes full viewport width */
+  flex-direction: column;
+}
+
+/* Card Styling */
+.login-card.card-custom-login {
+  padding: 20px !important;
+  margin: 0 auto !important; /* Center the card horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-card .form-group-custom-login {
+  margin-bottom: 20px !important; /* Add vertical space between form groups */
+}
+
+.login-card .button-login-custom {
+  margin-top: 20px !important; /* Add vertical space above the button */
+}
+
+/* Modal Styles */
+.modal-dialog-custom-login {
+  border-radius: 3px !important;
+  background-color: #a9a9a9 !important; /* Set the background color to imitate ProfileModal */
+  overflow: hidden !important;
+}
+
+.modal-header-custom-login {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  background-color: #a9a9a9 !important; /* Match the background color */
+  border-bottom: 1px solid black !important; /* Bring back the border */
+  border-top-left-radius: 3px !important;
+  border-top-right-radius: 3px !important;
+  font-weight: 600 !important; /* Use medium-bold weight for the title */
+  font-size: 20px !important; /* Increase the font size of the title */
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.modal-body-custom-login {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a9a9a9 !important; /* Set the background color to #a9a9a9 */
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.button-custom-login {
+  color: black !important;
+  padding: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+}
+
+.image-custom-login {
+  width: 300px !important; /* Set desired image width */
+  height: 300px !important; /* Set desired image height */
+  object-fit: contain !important;
+  border-radius: 0 !important; /* Inherit border radius from container */
+}
+
+.form-check-custom-login {
+  margin: 10px 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.form-check-custom-login label {
+  cursor: pointer !important;
+  color: navy !important; /* Set email text color to navy */
+}
+
+.form-check-custom-login label:hover {
+  text-decoration: underline !important; /* Add underline on hover */
+}
+
+.form-check-custom-login .form-check-input:checked + label {
+  color: #007bff !important; /* Bright blue when clicked (same as button) */
+}
+
+.form-group-custom-login {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 20px !important;
+}
+
+.form-control-custom-login {
+  border-right: none !important;
+}
+
+.input-group-text-custom-login {
+  cursor: pointer !important;
+  background-color: white !important;
+  border: 1px solid #ced4da !important; /* Matching input field border */
+  border-left: none !important; /* No left border */
+  border-radius: 0 0.25rem 0.25rem 0 !important; /* Rounded corners on the right */
+}
+
+.radio-button-custom-login {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.email-label-custom-login {
+  cursor: pointer;
+  font-weight: normal; /* Default font weight */
+  color: navy; /* Default text color */
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+}
+
+/* Custom styling for the radio buttons */
+input[type="radio"] {
+  appearance: none; /* Remove default styling */
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 50%;
+  vertical-align: middle; /* Vertically center */
+  cursor: pointer; /* Ensure the pointer is a finger pointer */
+}
+
+input[type="radio"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Bright cyan text color on mouse down or tap */
+input[type="radio"]:active,
+.email-label-custom-login:active {
+  color: #00ffff; /* Change text color to bright cyan */
+}
+
+/* Login Modal */
+
+.modal-background-login {
+  --modal-width: 1000px; /* Set your desired width here */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-background-login .modal-dialog {
+  background-color: transparent !important; /* Make the parent container invisible */
+  border: none !important; /* Remove the black border */
+  max-width: none !important; /* Ensure no max-width constraint */
+  width: var(--modal-width) !important; /* Apply the variable for width */
+  height: auto !important; /* Automatically adjust height */
+  position: relative;
+  margin: auto;
+}
+
+.modal-content-custom-login {
+  background-color: #a9a9a9 !important;
+  border-radius: 8px !important;
+  padding: 0 !important;
+}
+
+.modal-header-custom-login {
+  background-color: #a9a9a9 !important;
+  border-bottom: 1px solid black !important;
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+  font-weight: var(--font-weight-medium-bold) !important;
+  font-size: 20px !important;
+}
+
+.modal-body-custom-login {
+  background-color: #a9a9a9 !important;
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+
+.modal-header-custom-login {
+  padding-left: 15px !important; /* Ensure this matches the constant */
+  padding-right: 6px !important; /* Ensure this matches the constant */
+}
+
+.button-login-custom:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.button-login-custom:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.button-login-custom:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.alert-custom {
+  margin-bottom: 0px;
+  margin-left: 15px; /* Adjust margin as needed */
+  padding: 5;
+  flex-grow: 1;
+  max-width: 250px; /* Adjust max width as needed */
+  height: 38px; /* Match the height of the login button */
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center; /* Center the text horizontally */
+  text-align: center; /* Center the text horizontally */
+  font-weight: var(--font-weight-medium-bold); /* Medium-bold font weight from stylesheet */
+}
+
+
+
+

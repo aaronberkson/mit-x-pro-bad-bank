@@ -1,0 +1,373 @@
+/* Global Custom Properties
+  This section defines a set of CSS variables that hold theme colors and commonly used values.
+  These are accessible globally and ensure consistency and ease of maintenance across the site. */
+  :root {
+    /* Nav colors */
+    --active-nav-color:       #FF5733;      /* Color for indicating active nav element, nav-item or nav-brand */
+    --nav-pipe-color:         #aebdc0;      /* Color for pipe separators in nav, using border-right */
+    --tooltip-color:          #FF5733;      /* Color for tooltips on nav-item on hover */
+    --link-nav-color:         #44d1ff;      /* Color for clickable nav-item text */
+    --link-nav-hover:         #12a6ec;      /* Color for hover in nav-item text */
+    --link-nav-active:        #ffffff;      /* Color for hover active nav-item text */
+  
+    /* Card colors */
+    --create-account-color:   #004085;      /* Color for create account card */
+    --deposit-card-color:     #1B4D3E;      /* Color for deposit card  */
+    --withdrawal-card-color:  #800020;      /* Color for withdrawal card */
+    --all-data-color:         #3B719F;      /* Color for cards on All Data page */
+    --hover-overlay-color:    #33CCFF;      /* Richer cyan color */ 
+    --light-text-color:       whitesmoke;   /* Color for cards on All Data page */
+  
+    /* Colors for success alerts within cards  */
+    --alert-create-text:      #303234;      /* color for text of successful acct create alert */
+    --alert-create-bg:        #5bc0de;      /* Color for background of successful acct create alert */
+    --alert-create-border:    #49a2c2;      /* Color for border of successful acct create alert */
+  
+    --font-weight-thin:         100;
+    --font-weight-light:        300;
+    --font-weight-regular:      400;
+    --font-weight-medium:       500;
+    --font-weight-medium-bold:  600;
+    --font-weight-bold:         700;
+    --font-weight-black:        900;
+  
+    --spa-app-width:            780px;
+    --card-full-width:          770px;
+  
+  }
+  
+  /* Body default styling */
+  body {
+    font-family: 'Raleway', sans-serif !important;
+    color: #111613;
+    background-color: lightsteelblue; 
+  }
+  
+  /* Google Font font weights - Raleway */
+  
+  /* Thin weight */
+  .raleway-thin {
+    font-family: 'Raleway', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  /* Light weight */
+  .raleway-light {
+    font-family: 'Raleway', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  /* Regular weight */
+  .raleway-regular {
+    font-family: 'Raleway', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  /* Medium weight */
+  .raleway-medium {
+    font-family: 'Raleway', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  /* Medium weight */
+  .raleway-medium-bold {
+    font-family: 'Raleway', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  /* Bold weight */
+  .raleway-bold {
+    font-family: 'Raleway', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* Black weight */
+  .raleway-black {
+    font-family: 'Raleway', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  /* Raleway font settings */
+  body {
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  .raleway-small-caps-bold {
+    font-family: 'Raleway', sans-serif;
+    font-variant: small-caps;
+    font-weight: 750;
+  }
+  
+  .raleway-italic {
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-weight: 550; /* Medium weight */
+  }
+  
+  .bright-green {
+    color: #39FF14; /* Bright green color */
+  }
+  
+  /* React Bootstrap Card styling, customized per page */
+
+.card {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 50%; /* Adjust the width as necessary */
+}
+
+.login-card {
+  width: var(--card-full-width); /* Or any other width that you want */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-card {
+  width: var(--card-full-width); 
+  margin-right: auto; /* Align the card to the left */
+}
+
+.home-card .card-header {
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
+}
+
+.home-card .card-title {
+  font-size: 27px;
+  font-weight: var(--font-weight-medium-bold);
+}
+
+.home-card .card-text {
+  font-size: 22px;
+  font-style: italic;
+  font-weight: var(--font-weight-medium);
+}
+
+.create-account-card {
+  background-color:  var(--create-account-color);
+  width: var(--card-full-width); 
+  margin-right: auto; /* Align the card to the left */
+}
+
+.create-account-card .card-header {
+  font-size: 19px;
+  font-weight: var(--font-weight-medium);
+}
+
+.alert-success-create-account {
+  color: var(--alert-create-text);
+  background-color: var(--alert-create-bg);
+  border-color: var(--alert-create-border);
+  font-weight: var(--font-weight-medium-bold);
+  font-size: 19px;
+  text-align: center;
+}
+
+.deposit-card {
+  width: var(--card-full-width); 
+  margin-right: auto; /* Align the card to the left */
+  color: var(--light-text-color);
+  background-color: var(--deposit-card-color);
+  font-weight: var(--font-weight-medium-bold);
+}
+
+.deposit-card .card-header {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+}
+
+.alert-success-deposit {
+  color: #36454f;
+  background-color: #dff0d8;
+  border-color: #96c8a2;
+  font-weight: var(--font-weight-medium-bold);
+  font-size: 19px;
+  text-align: center;
+}
+
+.withdrawal-card {
+  width: var(--card-full-width); 
+  background-color: var(--withdrawal-card-color); 
+  color: var(--light-text-color);
+}
+
+.withdrawal-card .card-header {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+}
+
+.alert-success-withdraw {
+  color: #36454F;
+  background-color: #FFD1D1;
+  border-color: #C06979;
+  /* color: #303234; var(--alert-create-text);
+  background-color: var(--alert-create-bg);
+  border-color: var(--alert-create-border); */
+  font-weight: var(--font-weight-medium-bold);
+  font-size: 19px;
+  text-align: center;
+}
+
+.all-data-card {
+  width: var(--card-full-width);  
+  margin-right: auto; /* Align the card to the left */
+  color: var(--light-text-color);
+  background-color: var(--all-data-color); 
+  font-size: 19px;
+}
+
+.all-data-title {
+  font-weight: var(--font-weight-bold);
+  font-size: 21px;
+  text-align: left;
+  width: var(--card-full-width);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+/* Center everything, while still keeping background color of navbar spanning 100% of viewport */
+
+.navbar {
+  display: flex; /* Use flexbox to center the child elements */
+  justify-content: center; /* This will center the children in the middle */
+  background-color: #333; /* Example background color */
+}
+
+.navbar-inner {
+  align-items: center; /* Aligns items vertically */
+  max-width: var(--spa-app-width); /* Set your desired max-width */
+  width: 100%; /* Ensures it spans to the max-width */
+  display: flex; /* Use flexbox for inner alignment */
+  justify-content: flex-start; /* Aligns children (navbar-brand) to the start (left) */
+}
+
+.navbar-brand {
+  margin-right: auto; /* Keeps the navbar-brand on the left */
+}
+
+.navbar-nav {
+  white-space: nowrap; /* Prevents nav-items from wrapping */
+  margin-right: auto; /* Pushes the navbar-nav to the left */
+}
+
+.route-content {
+  max-width: var(--spa-app-width);
+  margin: 0 auto; /* Centers the content within the viewport */
+  padding-left: 10px;
+}
+
+/* Fade Transition for React Transition Group animations */
+.fade-enter,
+.fade-appear {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-appear-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
+
+/* .fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+} */
+
+.all-data-card {
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Profile Pic hover state */
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--hover-overlay-color); /* Use the new brighter cyan color */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Align text to the bottom */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px; /* Match image border radius */
+  padding-bottom: 10px; /* Space between text and bottom of the image */
+}
+
+.hover-overlay span {
+  font-size: 20px;
+  font-weight: var(--font-weight-medium-bold); /* Apply existing medium bold font weight */
+}
+
+div:hover > .hover-overlay {
+  opacity: 1;
+}
+
+/* Profile Modal */
+
+.modal-background-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-background-profile .modal-dialog {
+  background-color: transparent !important; /* Make the parent container invisible */
+  border: none !important; /* Remove the black border */
+  max-width: none !important; /* Ensure no max-width constraint */
+  width: auto !important; /* Automatically adjust width */
+  height: auto !important; /* Automatically adjust height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-dialog-custom {
+  border-radius: 3px !important;
+}
+
+.modal-header-custom {
+  border-top-left-radius: 3px !important;
+  border-top-right-radius: 3px !important;
+  font-weight: var(--font-weight-medium-bold) !important; /* Set font weight to 600 */
+  font-size: 20px !important; /* Set font size to 20px */
+}
+
+.image-container-custom {
+  border-bottom-left-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
+}
+
