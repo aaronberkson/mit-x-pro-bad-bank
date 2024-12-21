@@ -1,9 +1,9 @@
 
-## Bad Bank 2.0
+## MITxPRO Bad Bank Capstone 
 
 **Description/Motivation**
 
-Bad Bank 2.0 is a full-stack web application designed to provide a secure and interactive banking experience. It utilizes modern technologies to enhance user experience and data security. This project aims to showcase the power of MERN stack development and Firebase authentication.
+The Bad Bank Capstone project is a full-stack web application designed to provide a secure and interactive banking experience. It utilizes modern technologies to enhance user experience and data security. This project aims to showcase the power of MERN stack development and Firebase authentication.
 
 **Installation Guidelines**
 
@@ -12,7 +12,7 @@ Bad Bank 2.0 is a full-stack web application designed to provide a secure and in
     Bash
     
     ```
-    git clone https://github.com/aaronberkson/bad-bank-2.0.git
+    git clone https://github.com/aaronberkson/mit-x-pro-bad-bank
     
     ```
     
@@ -21,7 +21,7 @@ Bad Bank 2.0 is a full-stack web application designed to provide a secure and in
     Bash
     
     ```
-    cd bad-bank-2.0
+    cd mit-x-pro-bad-bank
     npm install
     
     ```
